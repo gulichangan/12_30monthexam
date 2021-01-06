@@ -1,0 +1,53 @@
+#端口号
+server:
+  port: 8082
+
+dubbo:
+  application:
+    id: dubbo-provider
+    name: dubbo-provider  #应用名称
+    owner: aggerChen      #应用所属者
+    organization: agger   #应用所属组织
+  registry:
+    #id: zookeeper-registry #注册中心id
+    #protocol: zookeeper    #注册中心协议
+    #address: zookeeper://127.0.0.1:2181 #注册中心地址
+    #metadata-report:
+    #address: zookeeper://127.0.0.1:2181
+    address: N/A
+  protocol:
+    name: dubbo   #协议名称
+    port: 20880   #协议端口
+    accesslog: dubbo-access.log #协议访问log
+  provider:
+    retries: 0    #重试次数
+    timeout: 3000 #超时时间
+  monitor:
+    protocol: registry # 注册监控中心
+
+#数据源
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///12_30monthexam
+    password: 123
+    username: root
+  mail:
+    host: smtp.qq.com
+    username: 2938135485@qq.com
+    password: fytehfzzcbxyddhh
+    defalut-encoding: UTF-8
+    port: 25
+    properties:
+      mail:
+        smtp:
+          socketFactory:
+            class:javax.net.ssl.SSLSocketFactory
+          debug: true
+#sql日志
+mybatis-plus:
+  configuration:
+    log-impl:
+      org.apache.ibatis.logging.stdout.StdOutImpl
+    #指定mapper.xml
+  mapper-locations: classpath:mapper/*.xml

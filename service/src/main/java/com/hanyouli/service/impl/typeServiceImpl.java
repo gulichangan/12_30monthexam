@@ -12,6 +12,6 @@ import org.apache.dubbo.config.annotation.Service;
  * @since 2020-12-30 14:07:29
  */
 @Service
-public class TypeServiceImpl extends ServiceImpl<TypeDao, Type> implements TypeService {
+public class typeServiceImpl extends ServiceImpl<TypeDao, Type> implements TypeService {
 
 }
